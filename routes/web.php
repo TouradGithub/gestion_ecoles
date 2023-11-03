@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',  [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
+
+
+Auth::routes();
+
+
+Route::group(['namespace' => 'Auth'], function () {
+
+    Route::get('/login/{type}',[App\Http\Controllers\Auth\LoginController::class,'loginForm'])->middleware('guest')->name('login.show');
+
+    Route::post('/login','LoginController@login')->name('login');
+
+    Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+
+
 });
+
