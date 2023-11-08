@@ -24,12 +24,10 @@ class StudentsTableSeeder extends Seeder
     {
         // DB::table('students')->delete();
         $students = new Student();
-        $students->name = ['ar' => 'احمد ابراهيم', 'en' => 'student Ibrahim'];
+        $students->name = ['ar' => 'احمد ', 'en' => 'student '];
         $students->email = 'student@yahoo.com';
         $students->password = Hash::make('1234');
         $students->gender_id = 1;
-        $students->nationalitie_id = Nationalitie::all()->unique()->random()->id;
-        $students->blood_id =Type_Blood::all()->unique()->random()->id;
         $students->Date_Birth = date('1995-01-01');
         $students->Grade_id = Grade::all()->unique()->random()->id;
         $students->Classroom_id =Classroom::all()->unique()->random()->id;

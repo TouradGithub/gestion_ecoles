@@ -27,19 +27,17 @@ class LoginController extends Controller
     public function login(Request $request){
 
         if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
-                
+
             return $this->redirect($request);
         }
 
     }
+
     public function logout(Request $request,$type)
     {
         Auth::guard($type)->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
     }
 

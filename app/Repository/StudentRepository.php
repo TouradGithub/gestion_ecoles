@@ -103,8 +103,6 @@ class StudentRepository implements StudentRepositoryInterface{
             $students->email = $request->email;
             $students->password = Hash::make($request->password);
             $students->gender_id = $request->gender_id;
-            $students->nationalitie_id = $request->nationalitie_id;
-            $students->blood_id = $request->blood_id;
             $students->Date_Birth = $request->Date_Birth;
             $students->Grade_id = $request->Grade_id;
             $students->Classroom_id = $request->Classroom_id;

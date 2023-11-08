@@ -8,7 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>برنامج مورا سوفت لادارة المدارس</title>
+    <title> Gestion Scoalaire </title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -25,18 +25,13 @@
 <body>
 
 <div class="wrapper">
-    <!--=================================
-preloader -->
+ 
 
     <div id="pre-loader">
         <img src="{{URL::asset('assets/images/pre-loader/loader-01.svg')}}" alt="">
     </div>
 
-    <!--=================================
-preloader -->
 
-    <!--=================================
-login-->
 
     <section class="height-100vh d-flex align-items-center page-section-ptb login"
              style="background-image: url('{{ asset('assets/images/sativa.png')}}');">
