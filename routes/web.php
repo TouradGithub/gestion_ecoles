@@ -7,6 +7,9 @@ use App\Http\Controllers\Sections\SectionController;
 use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Students\AttendanceController;
+use App\Http\Controllers\subjects\SubjectController;
+use App\Http\Controllers\Teachers\TeacherController;
+use App\Http\Controllers\Quizzes\QuizzController;
 // use App\Http\Controllers\Auth;
 
 
@@ -26,8 +29,8 @@ Auth::routes();
 Route::group(
     [
 
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
+        // 'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'auth']
     ], function () {
 
      //==============================dashboard============================
@@ -61,9 +64,9 @@ Route::group(
     Route::view('add_parent','livewire.show_Form')->name('add_parent');
 
     //==============================Teachers============================
-    Route::group(['namespace' => 'Teachers'], function () {
+    // Route::group(['namespace' => 'Teachers'], function () {
         Route::resource('Teachers', TeacherController::class);
-    });
+    // });
 
     //==============================Students============================
         Route::resource('Students', StudentController::class);
@@ -90,9 +93,9 @@ Route::group(
 
 
     //==============================Quizzes============================
-    Route::group(['namespace' => 'Quizzes'], function () {
-        Route::resource('Quizzes', 'QuizzController');
-    });
+    // Route::group(['namespace' => 'Quizzes'], function () {
+        Route::resource('Quizzes', QuizzController::class);
+    // });
 
     //==============================questions============================
     Route::group(['namespace' => 'questions'], function () {

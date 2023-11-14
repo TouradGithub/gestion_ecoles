@@ -27,9 +27,11 @@ class TeacherController extends Controller
 
     public function create()
     {
+
          $specializations = $this->Teacher->Getspecialization();
          $genders = $this->Teacher->GetGender();
          return view('pages.Teachers.create',compact('specializations','genders'));
+
     }
 
 

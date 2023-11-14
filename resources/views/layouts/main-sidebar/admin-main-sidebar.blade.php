@@ -99,7 +99,7 @@
 
 
         <!-- Parents-->
-        <li>
+        {{-- <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">
                 <div class="pull-left"><i class="fas fa-user-tie"></i><span
                         class="right-nav-text">{{trans('main_trans.Parents')}}</span></div>
@@ -109,7 +109,7 @@
             <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
                 <li> <a href="{{url('add_parent')}}">{{trans('main_trans.List_Parents')}}</a> </li>
             </ul>
-        </li>
+        </li> --}}
 
         <!-- Accounts-->
         {{-- <li>

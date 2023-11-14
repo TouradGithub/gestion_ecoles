@@ -10,8 +10,8 @@ class CreateGradesTable extends Migration {
 		Schema::create('Grades', function(Blueprint $table) {
 			$table->id();
 			$table->timestamps();
-			$table->string('Name');
-        	$table->text('Notes')->nullable();
+			$table->string('name');
+        	$table->text('notes')->nullable();
 		});
 	}
 

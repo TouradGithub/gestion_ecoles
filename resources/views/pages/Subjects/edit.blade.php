@@ -2,18 +2,18 @@
 @section('css')
     @toastr_css
 @section('title')
-    اضافة مادة دراسية
+    Modifier une matière
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    اضافة مادة دراسية
+    Modifier une matière
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
     <div class="row">
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
@@ -30,19 +30,19 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <br>
-                            <form action="{{route('subjects.update','test')}}" method="post" autocomplete="off">
+                            <form action="{{ route('subjects.update', 'test') }}" method="post" autocomplete="off">
                                 {{ method_field('patch') }}
                                 @csrf
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">اسم المادة باللغة العربية</label>
+                                        <label for="title">Nom de la matière en arabe</label>
                                         <input type="text" name="Name_ar"
                                                value="{{ $subject->getTranslation('name', 'ar') }}"
                                                class="form-control">
-                                        <input type="hidden" name="id" value="{{$subject->id}}">
+                                        <input type="hidden" name="id" value="{{ $subject->id }}">
                                     </div>
                                     <div class="col">
-                                        <label for="title">اسم المادة باللغة الانجليزية</label>
+                                        <label for="title">Nom de la matière en anglais</label>
                                         <input type="text" name="Name_en"
                                                value="{{ $subject->getTranslation('name', 'en') }}"
                                                class="form-control">
@@ -52,18 +52,18 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="inputState">المرحلة الدراسية</label>
+                                        <label for="inputState">Niveau scolaire</label>
                                         <select class="custom-select my-1 mr-sm-2" name="Grade_id">
-                                            <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                            <option selected disabled>{{ trans('Parent_trans.Choose') }}...</option>
                                             @foreach($grades as $grade)
                                                 <option
-                                                    value="{{$grade->id}}" {{$grade->id == $subject->grade_id ?'selected':''}}>{{$grade->Name }}</option>
+                                                    value="{{$grade->id}}" {{$grade->id == $subject->grade_id ? 'selected' : ''}}>{{$grade->Name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
 
                                     <div class="form-group col">
-                                        <label for="inputState">الصف الدراسي</label>
+                                        <label for="inputState">Classe</label>
                                         <select name="Class_id" class="custom-select">
                                             <option
                                                 value="{{ $subject->classroom->id }}">{{ $subject->classroom->Name_Class }}
@@ -72,19 +72,17 @@
                                     </div>
 
                                     <div class="form-group col">
-                                        <label for="inputState">اسم المعلم</label>
+                                        <label for="inputState">Nom de l'enseignant</label>
                                         <select class="custom-select my-1 mr-sm-2" name="teacher_id">
-                                            <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                            <option selected disabled>{{ trans('Parent_trans.Choose') }}...</option>
                                             @foreach($teachers as $teacher)
                                                 <option
-                                                    value="{{$teacher->id}}" {{$teacher->id == $subject->teacher_id ?'selected':''}}>{{$teacher->Name}}</option>
+                                                    value="{{$teacher->id}}" {{$teacher->id == $subject->teacher_id ? 'selected' : ''}}>{{$teacher->Name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ
-                                    البيانات
-                                </button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">Enregistrer les données</button>
                             </form>
                         </div>
                     </div>
@@ -92,7 +90,7 @@
             </div>
         </div>
     </div>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js
@@ -114,7 +112,7 @@
                         },
                     });
                 } else {
-                    console.log('AJAX load did not work');
+                    console.log('Le chargement AJAX n\'a pas fonctionné');
                 }
             });
         });

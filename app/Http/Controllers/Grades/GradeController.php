@@ -34,7 +34,7 @@ class GradeController extends Controller
   public function store(StoreGrades $request)
   {
 
- try {
+        try {
           $validated = $request->validated();
           $Grade = new Grade();
           /*
@@ -49,14 +49,12 @@ class GradeController extends Controller
           $Grade->save();
            toastr()->success(trans('messages.success'));
           return redirect()->route('Grades.index');
-      }
+        }
 
-      catch (\Exception $e){
+         catch (\Exception $e){
           return redirect()->back()->withErrors(['error' => $e->getMessage()]);
       }
-
-
-  }
+    }
 
   /**
    * Update the specified resource in storage.

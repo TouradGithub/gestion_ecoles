@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'Name_Teacher'=>'Name Teacher',
-    'Add_Teacher'=>'Add Teacher',
-    'Edit_Teacher'=>'Edit Teacher',
-    'Delete_Teacher'=>'Delete Teacher',
+    'Name_Teacher'=>'Nom de l\'enseignant',
+    'Add_Teacher'=>'Ajouter un enseignant',
+    'Edit_Teacher'=>'Modifier un enseignant',
+    'Delete_Teacher'=>'Supprimer un enseignant',
     'Email'=>'Email',
-    'Password'=>'Password',
-    'Name_ar'=>'Name_ar',
-    'Name_en'=>'Name_en',
-    'specialization'=>'specialization',
-    'Gender'=>'Gender',
-    'Joining_Date'=>'Joining_Date',
-    'Address'=>'Address',
+    'Password'=>'Mot de passe',
+    'Name_ar'=>'Nom en arabe',
+    'Name_en'=>'Nom en anglais',
+    'specialization'=>'Spécialisation',
+    'Gender'=>'Genre',
+    'Joining_Date'=>'Date d\'embauche',
+    'Address'=>'Adresse',
 ];
