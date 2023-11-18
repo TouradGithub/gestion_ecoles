@@ -2,20 +2,18 @@
 @section('css')
     @toastr_css
     @section('title')
-        الملف الشخصي
+        Profil Utilisateur
     @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
     @section('PageTitle')
-        الملف الشخصي
+        Profil Utilisateur
     @stop
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
-
-
+    <!-- ligne -->
 
     <div class="card-body">
 
@@ -29,7 +27,7 @@
                                  class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 style="font-family: Cairo" class="my-3">{{$information->Name}}</h5>
                             <p class="text-muted mb-1">{{$information->email}}</p>
-                            <p class="text-muted mb-4">معلم</p>
+                            <p class="text-muted mb-4">Enseignant</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +38,7 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">اسم المستخدم باللغة العربية</p>
+                                        <p class="mb-0">Nom d'utilisateur en arabe</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -53,7 +51,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">اسم المستخدم باللغة الانجليزية</p>
+                                        <p class="mb-0">Nom d'utilisateur en anglais</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -66,7 +64,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">كلمة المرور</p>
+                                        <p class="mb-0">Mot de passe</p>
                                     </div>
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
@@ -74,11 +72,11 @@
                                         </p><br><br>
                                         <input type="checkbox" class="form-check-input" onclick="myFunction()"
                                                id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">اظهار كلمة المرور</label>
+                                        <label class="form-check-label" for="exampleCheck1">Afficher le mot de passe</label>
                                     </div>
                                 </div>
                                 <hr>
-                                <button type="submit" class="btn btn-success">تعديل البيانات</button>
+                                <button type="submit" class="btn btn-success">Modifier les informations</button>
                             </form>
                         </div>
                     </div>
@@ -86,7 +84,7 @@
             </div>
         </section>
     </div>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js

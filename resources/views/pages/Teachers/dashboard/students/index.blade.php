@@ -2,18 +2,18 @@
 @section('css')
     @toastr_css
 @section('title')
-    قائمة الحضور والغياب للطلاب
+    Liste de présence et d'absence des étudiants
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    قائمة الحضور والغياب للطلاب
+    Liste de présence et d'absence des étudiants
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <h5 style="font-family: 'Cairo', sans-serif;color: red"> تاريخ اليوم : {{ date('Y-m-d') }}</h5>
+    <h5 style="font-family: 'Cairo', sans-serif;color: red"> Date du jour : {{ date('Y-m-d') }}</h5>
     <form method="post" action="{{ route('attendance') }}" autocomplete="off">
 
         @csrf
@@ -48,7 +48,7 @@
                 <th class="alert-success">{{ trans('Students_trans.Grade') }}</th>
                 <th class="alert-success">{{ trans('Students_trans.classrooms') }}</th>
                 <th class="alert-success">{{ trans('Students_trans.section') }}</th>
-                <th class="alert-success">الحضور والغياب</th>
+                <th class="alert-success">Présence et Absence</th>
             </tr>
             </thead>
             <tbody>
@@ -68,8 +68,8 @@
                                    {{ $attendance->attendence_status == 1 ? 'checked' : '' }}
                                    @endforeach
                                    class="leading-tight" type="radio"
-                                   value="presence">
-                            <span class="text-success">حضور</span>
+                                   value="présence">
+                            <span class="text-success">Présence</span>
                         </label>
 
                         <label class="ml-4 block text-gray-500 font-semibold">
@@ -79,7 +79,7 @@
                                    @endforeach
                                    class="leading-tight" type="radio"
                                    value="absent">
-                            <span class="text-danger">غياب</span>
+                            <span class="text-danger">Absence</span>
                         </label>
 
                         <input type="hidden" name="grade_id" value="{{ $student->Grade_id }}">
@@ -95,7 +95,7 @@
             <button class="btn btn-success" type="submit">{{ trans('Students_trans.submit') }}</button>
         </P>
     </form><br>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js

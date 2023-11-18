@@ -2,18 +2,18 @@
 @section('css')
 
 @section('title')
-    تقرير الحضور والغياب
+    Rapport de Présence et d'Absence
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    تقارير الحضور والغياب
+    Rapport de Présence et d'Absence
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 
 @section('content')
-<!-- row -->
+<!-- ligne -->
 <div class="row">
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
@@ -29,15 +29,15 @@
                     </div>
                 @endif
 
-                <form method="post"  action="{{ route('attendance.search') }}" autocomplete="off">
+                <form method="post" action="{{ route('attendance.search') }}" autocomplete="off">
                     @csrf
-                    <h6 style="font-family: 'Cairo', sans-serif;color: blue">معلومات البحث</h6><br>
+                    <h6 style="font-family: 'Cairo', sans-serif;color: blue">Informations de recherche</h6><br>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="student">الطلاب</label>
+                                <label for="student">Étudiants</label>
                                 <select class="custom-select mr-sm-2" name="student_id">
-                                    <option value="0">الكل</option>
+                                    <option value="0">Tous</option>
                                     @foreach($students as $student)
                                         <option value="{{ $student->id }}">{{ $student->name }}</option>
                                     @endforeach
@@ -47,9 +47,9 @@
 
                         <div class="card-body datepicker-form">
                             <div class="input-group" data-date-format="yyyy-mm-dd">
-                                <input type="text"  class="form-control range-from date-picker-default" placeholder="تاريخ البداية" required name="from">
-                                <span class="input-group-addon">الي تاريخ</span>
-                                <input class="form-control range-to date-picker-default" placeholder="تاريخ النهاية" type="text" required name="to">
+                                <input type="text" class="form-control range-from date-picker-default" placeholder="Date de début" required name="from">
+                                <span class="input-group-addon">à la date</span>
+                                <input class="form-control range-to date-picker-default" placeholder="Date de fin" type="text" required name="to">
                             </div>
                         </div>
 
@@ -66,8 +66,8 @@
                             <th class="alert-success">{{trans('Students_trans.name')}}</th>
                             <th class="alert-success">{{trans('Students_trans.Grade')}}</th>
                             <th class="alert-success">{{trans('Students_trans.section')}}</th>
-                            <th class="alert-success">التاريخ</th>
-                            <th class="alert-warning">الحالة</th>
+                            <th class="alert-success">Date</th>
+                            <th class="alert-warning">Statut</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -79,11 +79,10 @@
                                 <td>{{$student->section->Name_Section}}</td>
                                 <td>{{$student->attendence_date}}</td>
                                 <td>
-
                                     @if($student->attendence_status == 0)
-                                        <span class="btn-danger">غياب</span>
+                                        <span class="btn-danger">Absence</span>
                                     @else
-                                        <span class="btn-success">حضور</span>
+                                        <span class="btn-success">Présence</span>
                                     @endif
                                 </td>
                             </tr>
@@ -97,7 +96,7 @@
         </div>
     </div>
 </div>
-<!-- row closed -->
+<!-- ligne fermée -->
 @endsection
 @section('js')
 

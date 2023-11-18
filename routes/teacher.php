@@ -4,7 +4,10 @@ use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Teachers\TeacherController;
+use App\Http\Controllers\Teachers\dashboard\StudentController;
+use App\Http\Controllers\Teachers\dashboard\QuizzController;
+use App\Http\Controllers\Teachers\dashboard\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | student Routes
@@ -36,21 +39,21 @@ Route::group(
         return view('pages.Teachers.dashboard.dashboard',$data);
     });
 
-    Route::group(['namespace' => 'Teachers\dashboard'], function () {
+    // Route::group(['namespace' => 'Teachers\dashboard'], function () {
         //==============================students============================
-     Route::get('student','StudentController@index')->name('student.index');
-     Route::get('sections','StudentController@sections')->name('sections');
-     Route::post('attendance','StudentController@attendance')->name('attendance');
-     Route::post('edit_attendance','StudentController@editAttendance')->name('attendance.edit');
-     Route::get('attendance_report','StudentController@attendanceReport')->name('attendance.report');
-     Route::post('attendance_report','StudentController@attendanceSearch')->name('attendance.search');
-     Route::resource('quizzes', 'QuizzController');
-     Route::resource('questions', 'QuestionController');
-     Route::resource('online_zoom_classes', 'OnlineZoomClassesController');
-     Route::get('/indirect', 'OnlineZoomClassesController@indirectCreate')->name('indirect.teacher.create');
-     Route::post('/indirect', 'OnlineZoomClassesController@storeIndirect')->name('indirect.teacher.store');
-     Route::get('profile', 'ProfileController@index')->name('profile.show');
-     Route::post('profile/{id}', 'ProfileController@update')->name('profile.update');
-    });
+     Route::get('student',[StudentController::class,'index'])->name('student.index');
+     Route::get('sections',[StudentController::class,'sections'])->name('sections');
+     Route::post('attendance',[StudentController::class,'attendance'])->name('attendance');
+     Route::post('edit_attendance',[StudentController::class,'editAttendance'])->name('attendance.edit');
+     Route::get('attendance_report',[StudentController::class,'attendanceReport'])->name('attendance.report');
+     Route::post('attendance_report',[StudentController::class,'attendanceSearch'])->name('attendance.search');
+     Route::resource('quizzes', QuizzController::class);
+     Route::resource('questions', QuestionController::class);
+     Route::resource('online_zoom_classes', OnlineZoomClassesController::class);
+     Route::get('/indirect', [OnlineZoomClassesController::class,'indirectCreate'])->name('indirect.teacher.create');
+     Route::post('/indirect', [OnlineZoomClassesController::class,'storeIndirect'])->name('indirect.teacher.store');
+     Route::get('profile', [ProfileController::class,'index'])->name('profile.show');
+     Route::post('profile/{id}', [ProfileController::class,'update'])->name('profile.update');
+    // });
 
 });

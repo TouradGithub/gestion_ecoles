@@ -23,7 +23,7 @@ Auth::routes();
 
     Route::post('/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('login');
 
-    Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+    Route::get('/logout/{type}', [App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 
 
 Route::group(

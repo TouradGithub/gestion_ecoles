@@ -2,18 +2,18 @@
 @section('css')
     @toastr_css
 @section('title')
-    قائمة الاختبارات
+    Liste des examens
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    قائمة الاختبارات
+    Liste des examens
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
     <div class="row">
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('quizzes.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة اختبار جديد</a><br><br>
+                                   aria-pressed="true">Ajouter un nouvel examen</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,12 +30,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>اسم المعلم</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>القسم</th>
-                                            <th>العمليات</th>
+                                            <th>Nom de l'examen</th>
+                                            <th>Nom de l'enseignant</th>
+                                            <th>Niveau scolaire</th>
+                                            <th>Classe</th>
+                                            <th>Section</th>
+                                            <th>Opérations</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -53,10 +53,10 @@
                                                             class="fa fa-edit"></i></a>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#delete_exam{{ $quizze->id }}" title="حذف"><i
+                                                            data-target="#delete_exam{{ $quizze->id }}" title="Supprimer"><i
                                                             class="fa fa-trash"></i></button>
                                                     <a href="{{route('quizzes.show',$quizze->id)}}"
-                                                       class="btn btn-warning btn-sm" title="عرض الاسئلة" role="button" aria-pressed="true"><i
+                                                       class="btn btn-warning btn-sm" title="Afficher les questions" role="button" aria-pressed="true"><i
                                                             class="fa fa-binoculars"></i></a>
                                                 </td>
                                             </tr>
@@ -70,7 +70,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">حذف اختبار</h5>
+                                                                    class="modal-title" id="exampleModalLabel">Supprimer un examen</h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
@@ -102,7 +102,7 @@
             </div>
         </div>
     </div>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js

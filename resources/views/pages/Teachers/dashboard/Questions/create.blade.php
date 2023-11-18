@@ -2,18 +2,18 @@
 @section('css')
     @toastr_css
 @section('title')
-    اضافة سؤال جديد
+    Ajouter une nouvelle question
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    اضافة سؤال جديد
+    Ajouter une nouvelle question
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
     <div class="row">
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
@@ -35,7 +35,7 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم السؤال</label>
+                                        <label for="title">Nom de la question</label>
                                         <input type="text" name="title" id="input-name"
                                                class="form-control form-control-alternative" autofocus>
                                         <input type="hidden" value="{{$quizz_id}}" name="quizz_id">
@@ -45,7 +45,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابات</label>
+                                        <label for="title">Réponses</label>
                                         <textarea name="answers" class="form-control" id="exampleFormControlTextarea1"
                                                   rows="4"></textarea>
                                     </div>
@@ -54,7 +54,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابة الصحيحة</label>
+                                        <label for="title">Réponse correcte</label>
                                         <input type="text" name="right_answer" id="input-name"
                                                class="form-control form-control-alternative" autofocus>
                                     </div>
@@ -64,9 +64,9 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">الدرجة : <span class="text-danger">*</span></label>
+                                            <label for="Grade_id">Note : <span class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="score">
-                                                <option selected disabled> حدد الدرجة...</option>
+                                                <option selected disabled> Sélectionnez la note...</option>
                                                 <option value="5">5</option>
                                                 <option value="10">10</option>
                                                 <option value="15">15</option>
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ البيانات</button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">Enregistrer les données</button>
                             </form>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js

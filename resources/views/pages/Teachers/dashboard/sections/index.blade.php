@@ -2,18 +2,18 @@
 @section('css')
 
 @section('title')
-  الاقسام الدراسية
+  Les Sections
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    الاقسام الدراسية
+    Les Sections
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
     <div class="row">
 
         <div class="col-xl-12 mb-30">
@@ -26,8 +26,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>اسم المرحلة</th>
-                                <th>اسم القسم</th>
+                                <th>Nom du cycle</th>
+                                <th>Nom de la section</th>
                             </tr>
                             </thead>
                             <tbody>

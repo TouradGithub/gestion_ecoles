@@ -2,18 +2,18 @@
 @section('css')
     @toastr_css
 @section('title')
-    تعديل اختبار {{$quizz->name}}
+    Modifier le test {{$quizz->name}}
 @stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- fil d'ariane -->
 @section('PageTitle')
-    تعديل اختبار {{$quizz->name}}
+    Modifier le test {{$quizz->name}}
 @stop
-<!-- breadcrumb -->
+<!-- fil d'ariane -->
 @endsection
 @section('content')
-    <!-- row -->
+    <!-- ligne -->
     <div class="row">
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
@@ -36,13 +36,13 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم الاختبار باللغة العربية</label>
+                                        <label for="title">Nom du test en arabe</label>
                                         <input type="text" name="Name_ar" value="{{$quizz->getTranslation('name','ar')}}" class="form-control">
                                         <input type="hidden" name="id" value="{{$quizz->id}}">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">اسم الاختبار باللغة الانجليزية</label>
+                                        <label for="title">Nom du test en anglais</label>
                                         <input type="text" name="Name_en" value="{{$quizz->getTranslation('name','en')}}" class="form-control">
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">المادة الدراسية : <span class="text-danger">*</span></label>
+                                            <label for="subject_id">Matière scolaire : <span class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="subject_id">
                                                 @foreach($subjects as $subject)
                                                     <option value="{{ $subject->id }}" {{$subject->id == $quizz->subject_id ? "selected":""}}>{{ $subject->name }}</option>
@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
                                 </div><br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">تاكيد البيانات</button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">Confirmer les données</button>
                             </form>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-    <!-- row closed -->
+    <!-- ligne fermée -->
 @endsection
 @section('js')
     @toastr_js
@@ -123,7 +123,7 @@
                         },
                     });
                 } else {
-                    console.log('AJAX load did not work');
+                    console.log('Le chargement AJAX n\'a pas fonctionné');
                 }
             });
         });
