@@ -23,7 +23,7 @@ class ParentsTableSeeder extends Seeder
             $my_parents = new My_Parent();
             $my_parents->email = 'samir.gamal77@yahoo.com';
             $my_parents->password = Hash::make('12345678');
-            $my_parents->Name_Father = ['en' => 'samirgamal', 'ar' => ' احمد'];
+            $my_parents->Name_Father = ['en' => 'ahmed', 'ar' => ' احمد'];
             $my_parents->National_ID_Father = '1234567810';
             $my_parents->Passport_ID_Father = '1234567810';
             $my_parents->Phone_Father = '1234567810';
